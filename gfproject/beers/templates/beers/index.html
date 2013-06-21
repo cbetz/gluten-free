@@ -11,6 +11,9 @@
 		    	</div>
 	    		<div class="caption">
 	    			{{ beer.name }}	
+	    			{% if beer.gluten_removed %}
+	    				<p><i class="icon-eject"></i> Gluten Removed</p>
+	    			{% endif %}
 	    		</div>
 		    </li>
 		{% endfor %}

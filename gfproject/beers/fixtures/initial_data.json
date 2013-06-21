@@ -31,6 +31,7 @@
       "name": "Brunehaut Bio Blonde (Organic and Gluten free)",
       "brewery": 1,
       "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-BrunehautBioBlondeOrganicandGlutenfree_5663.jpeg",
+      "gluten_removed": true,
       "created": "2013-06-21",
       "updated": "2013-06-21"
     }
@@ -43,6 +44,7 @@
       "name": "Omission Pale Ale",
       "brewery": 2,
       "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-OmissionPaleAle_131265.jpeg",
+      "gluten_removed": true,
       "created": "2013-06-21",
       "updated": "2013-06-21"
     }

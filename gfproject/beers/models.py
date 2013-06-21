@@ -19,6 +19,7 @@ class Beer(models.Model):
     name = models.CharField(max_length=200)
     brewery = models.ForeignKey(Brewery)
     label = models.URLField(max_length=200)
+    gluten_removed = models.BooleanField()
     created = models.DateField(auto_now_add=True)
     updated = models.DateField(auto_now=True)
     
