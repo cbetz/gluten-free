@@ -12,9 +12,12 @@
 			    	</div>
 		    		<div class="caption">
 		    			<h5>{{ beer.name }}</h5>
-		    			<p>&nbsp;
+		    			<h6>{{ beer.brewery.name }}</h6>
+		    			<p>
 		    			{% if beer.gluten_removed %}
 		    				<i class="icon-eject"></i> Gluten Removed
+		    			{% else %}
+		    				&nbsp;
 		    			{% endif %}
 		    			</p>
 		    		</div>
