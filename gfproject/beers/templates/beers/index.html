@@ -1,5 +1,20 @@
-<ul>
-	{% for beer in beer_list %}
-	    <li><a href="/beers/{{ beer.id }}/">{{ beer.name }}</a></li>
-	{% endfor %}
-</ul>
+{% extends "beers/base.html" %}
+
+{% block content %}
+
+<div class="row boxes">
+	<ul class="unstyled">
+		{% for beer in beer_list %}
+		    <li class="span3">
+		    	<div>
+		    		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
+		    	</div>
+	    		<div class="caption">
+	    			{{ beer.name }}	
+	    		</div>
+		    </li>
+		{% endfor %}
+	</ul>
+</div>
+
+{% endblock %}
