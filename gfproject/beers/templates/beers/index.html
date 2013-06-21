@@ -5,15 +5,17 @@
 <div class="row boxes">
 	<ul class="unstyled">
 		{% for beer in beer_list %}
-		    <li class="span3">
+		    <li class="span4">
 		    	<div>
 		    		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
 		    	</div>
 	    		<div class="caption">
 	    			{{ beer.name }}	
+	    			<p>&nbsp;
 	    			{% if beer.gluten_removed %}
-	    				<p><i class="icon-eject"></i> Gluten Removed</p>
+	    				<i class="icon-eject"></i> Gluten Removed
 	    			{% endif %}
+	    			</p>
 	    		</div>
 		    </li>
 		{% endfor %}

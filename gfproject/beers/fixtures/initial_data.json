@@ -23,6 +23,18 @@
       "updated": "2013-06-21"
     }
   },
+    {
+    "model": "beers.brewery",
+    "pk": 3,
+    "fields": {
+      "untappd_id": 2819,
+      "name": "Green's",
+      "country": "United States",
+      "logo": "https://untappd.s3.amazonaws.com/site/brewery_logos/brewery-Greens_2819.jpeg",
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
   {
     "model": "beers.beer",
     "pk": 1,
@@ -44,6 +56,45 @@
       "name": "Omission Pale Ale",
       "brewery": 2,
       "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-OmissionPaleAle_131265.jpeg",
+      "gluten_removed": true,
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 3,
+    "fields": {
+      "untappd_id": 10133,
+      "name": "Dubbel Dark Ale",
+      "brewery": 3,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-_10133_sm_ac91941ad8350564085d779bae5070.jpeg",
+      "gluten_removed": false,
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 4,
+    "fields": {
+      "untappd_id": 131266,
+      "name": "Omission Lager",
+      "brewery": 2,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-OmissionLager_131266.jpeg",
+      "gluten_removed": true,
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 5,
+    "fields": {
+      "untappd_id": 297231,
+      "name": "IPA",
+      "brewery": 2,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-_297231_sm_0cbea9cbfaeff3c66c163915fc3179.jpeg",
       "gluten_removed": true,
       "created": "2013-06-21",
       "updated": "2013-06-21"

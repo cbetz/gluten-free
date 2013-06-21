@@ -10,4 +10,4 @@ class IndexView(generic.ListView):
     context_object_name = 'beer_list'
 
     def get_queryset(self):
-        return Beer.objects.order_by('updated')
+        return Beer.objects.order_by('brewery__name')
