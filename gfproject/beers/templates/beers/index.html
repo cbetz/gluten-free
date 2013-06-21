@@ -3,20 +3,22 @@
 {% block content %}
 
 <div class="row boxes">
-	<ul class="unstyled">
+	<ul class="thumbnails">
 		{% for beer in beer_list %}
 		    <li class="span4">
-		    	<div>
-		    		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
+		    	<div class="thumbnail right-caption span4">
+			    	<div class="span2">
+			    		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
+			    	</div>
+		    		<div class="caption">
+		    			<h5>{{ beer.name }}</h5>
+		    			<p>&nbsp;
+		    			{% if beer.gluten_removed %}
+		    				<i class="icon-eject"></i> Gluten Removed
+		    			{% endif %}
+		    			</p>
+		    		</div>
 		    	</div>
-	    		<div class="caption">
-	    			{{ beer.name }}	
-	    			<p>&nbsp;
-	    			{% if beer.gluten_removed %}
-	    				<i class="icon-eject"></i> Gluten Removed
-	    			{% endif %}
-	    			</p>
-	    		</div>
 		    </li>
 		{% endfor %}
 	</ul>

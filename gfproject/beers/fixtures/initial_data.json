@@ -40,7 +40,7 @@
     "pk": 1,
     "fields": {
       "untappd_id": 5663,
-      "name": "Brunehaut Bio Blonde (Organic and Gluten free)",
+      "name": "Brunehaut Bio Blonde",
       "brewery": 1,
       "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-BrunehautBioBlondeOrganicandGlutenfree_5663.jpeg",
       "gluten_removed": true,
