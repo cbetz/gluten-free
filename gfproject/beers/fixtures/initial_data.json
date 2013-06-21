@@ -1,0 +1,50 @@
+[
+  {
+    "model": "beers.brewery",
+    "pk": 1,
+    "fields": {
+      "untappd_id": 171,
+      "name": "Brasserie de Brunehaut",
+      "country": "Belgium",
+      "logo": "https://untappd.s3.amazonaws.com/site/brewery_logos/brewery-BrasseriedeBrunehaut_171.jpeg",
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.brewery",
+    "pk": 2,
+    "fields": {
+      "untappd_id": 25595,
+      "name": "Omission Beer",
+      "country": "United States",
+      "logo": "https://untappd.s3.amazonaws.com/site/brewery_logos/brewery-OmissionBeer_25595.jpeg",
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 1,
+    "fields": {
+      "untappd_id": 5663,
+      "name": "Brunehaut Bio Blonde (Organic and Gluten free)",
+      "brewery": 1,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-BrunehautBioBlondeOrganicandGlutenfree_5663.jpeg",
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 2,
+    "fields": {
+      "untappd_id": 131265,
+      "name": "Omission Pale Ale",
+      "brewery": 2,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-OmissionPaleAle_131265.jpeg",
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  }
+]
