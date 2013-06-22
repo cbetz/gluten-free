@@ -196,15 +196,16 @@ class Untappd(object):
             return self.requester.POST(self._expanded_path(path), *args, **kwargs)
 
     class Beer(_Endpoint):
-        """Beer specific endpoint"""
         endpoint = 'beer'
 
-        """
-        General
-        """
         def __call__(self, BEER_ID):
-            """https://developer.foursquare.com/docs/venues/venues"""
             return self.GET('info/{BEER_ID}'.format(BEER_ID=BEER_ID))
+
+    class User(_Endpoint):
+        endpoint = 'user'
+
+        def __call__(self):
+            return self.GET('info')
 
 """
 Network helper functions

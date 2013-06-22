@@ -36,9 +36,15 @@
             </ul>
             <div class="pull-right">
                 {% if request.session.access_token %}
-                    <a class="btn btn-danger">Logout of Untappd</a>
+                    <div class="btn-group">
+                      <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> {{ request.session.user_name }}</a>
+                      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="logout"><i class="icon-remove-circle"></i> Logout</a></li>
+                      </ul>
+                    </div>
                 {% else %}
-                    <a class="btn btn-success">Login to Untappd</a>
+                    <a class="btn btn-success" href="/login">Login to Untappd</a>
                 {% endif %}
             </div>
         </div>

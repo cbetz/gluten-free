@@ -20,15 +20,19 @@ class IndexView(generic.ListView):
 def login(request):
 	return HttpResponseRedirect(auth_url)
 
+def logout(request):
+	request.session.clear()
+	return HttpResponseRedirect('/')
+
 def callback(request):
 	code = request.GET.get('code')
 	access_token = client.oauth.get_token(code)
 
 	request.session['access_token'] = access_token
 
-	#client.set_access_token(access_token)
-	#beer = client.beer(5663)
-	#print(beer['beer']['auth_rating'])
+	client.set_access_token(access_token)
+	user = client.user()
+	request.session['user_name'] = user['user']['user_name']
 
 	return HttpResponseRedirect('/')
 
