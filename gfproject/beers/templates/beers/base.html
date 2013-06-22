@@ -34,6 +34,13 @@
             <ul class="nav">
                 <li><a href="{% url 'index' %}" class="">Home</a></li>
             </ul>
+            <div class="pull-right">
+                {% if request.session.access_token %}
+                    <a class="btn btn-danger">Logout of Untappd</a>
+                {% else %}
+                    <a class="btn btn-success">Login to Untappd</a>
+                {% endif %}
+            </div>
         </div>
     </div>
 </div>

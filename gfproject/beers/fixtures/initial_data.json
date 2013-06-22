@@ -23,7 +23,7 @@
       "updated": "2013-06-21"
     }
   },
-    {
+  {
     "model": "beers.brewery",
     "pk": 3,
     "fields": {
@@ -31,6 +31,18 @@
       "name": "Green's",
       "country": "United States",
       "logo": "https://untappd.s3.amazonaws.com/site/brewery_logos/brewery-Greens_2819.jpeg",
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.brewery",
+    "pk": 4,
+    "fields": {
+      "untappd_id": 1298,
+      "name": "Two Brothers Brewing Company",
+      "country": "United States",
+      "logo": "https://untappd.s3.amazonaws.com/site/brewery_logos/brewery-TwoBrothersBrewingCompany_1298.jpeg",
       "created": "2013-06-21",
       "updated": "2013-06-21"
     }
@@ -95,6 +107,32 @@
       "name": "IPA",
       "brewery": 2,
       "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-_297231_sm_0cbea9cbfaeff3c66c163915fc3179.jpeg",
+      "gluten_removed": true,
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 6,
+    "fields": {
+      "untappd_id": 5664,
+      "name": "Brunehaut Bio Ambrée",
+      "brewery": 1,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-BrunehautBioAmbreeOrganicandGlutenFree_5664.jpeg",
+      "gluten_removed": true,
+      "created": "2013-06-21",
+      "updated": "2013-06-21"
+    }
+  },
+  {
+    "model": "beers.beer",
+    "pk": 7,
+    "fields": {
+      "untappd_id": 3142,
+      "name": "Prairie Path Ale",
+      "brewery": 4,
+      "label": "https://untappd.s3.amazonaws.com/site/beer_logos/beer-PrairiePathAle_3142.jpeg",
       "gluten_removed": true,
       "created": "2013-06-21",
       "updated": "2013-06-21"

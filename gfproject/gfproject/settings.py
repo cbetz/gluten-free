@@ -1,4 +1,5 @@
 # Django settings for gfproject project.
+from django.conf import global_settings
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -155,3 +156,7 @@ LOGGING = {
         },
     }
 }
+
+TEMPLATE_CONTEXT_PROCESSORS = global_settings.TEMPLATE_CONTEXT_PROCESSORS + (
+    "django.core.context_processors.request",
+)
