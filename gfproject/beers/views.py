@@ -17,6 +17,10 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Beer.objects.order_by('brewery__name')
 
+class DetailView(generic.DetailView):
+    model = Beer
+    template_name = 'beers/detail.html'
+
 def login(request):
 	return HttpResponseRedirect(auth_url)
 
