@@ -50,7 +50,7 @@ error_types = {
 }
 
 class Untappd(object):
-    """Untappd V2 API wrapper"""
+    """Untappd V4 API wrapper"""
 
     def __init__(self, client_id=None, client_secret=None, access_token=None, redirect_url=None,):
         """Sets up the api object"""

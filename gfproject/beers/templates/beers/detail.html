@@ -1,6 +1,27 @@
-<h1>{{ poll.question }}</h1>
-<ul>
-{% for choice in poll.choice_set.all %}
-    <li>{{ choice.choice_text }}</li>
-{% endfor %}
-</ul>
+{% extends "beers/base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="right-caption span12 card">
+    	<div class="span2">
+    		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
+    	</div>
+		<div class="caption">
+			<h3>{{ beer.name }}</h3>
+			<h4>{{ beer.brewery.name }}</h4>
+			<p>
+			{% if beer.gluten_removed %}
+				<i class="icon-eject"></i> Gluten Removed
+			{% else %}
+				&nbsp;
+			{% endif %}
+			</p>
+		</div>
+	</div>
+</div>
+<div class="row">
+	{{ untappd_beer.beer.stats.total_count}}
+</div>
+
+
+{% endblock %}

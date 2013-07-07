@@ -4,11 +4,9 @@ from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views import generic
+from django.conf import settings
 
 from beers.models import Brewery, Beer
-
-client = untappd.Untappd(client_id='', client_secret='', redirect_url='')
-auth_url = client.oauth.auth_url()
 
 class IndexView(generic.ListView):
     template_name = 'beers/index.html'
@@ -17,18 +15,30 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         return Beer.objects.order_by('brewery__name')
 
-class DetailView(generic.DetailView):
-    model = Beer
-    template_name = 'beers/detail.html'
+def detail(request, beer_id):
+	beer = get_object_or_404(Beer, pk=beer_id)
+
+	if 'access_token' in request.session:
+		client = untappd.Untappd(access_token=request.session['access_token'])
+		untappd_beer = client.beer(beer.untappd_id)
+	else:
+		untappd_beer = None
+
+	return render(request, 'beers/detail.html', { 'beer': beer, 'untappd_beer': untappd_beer })
 
 def login(request):
+	client = untappd.Untappd(client_id=settings.UNTAPPD['client_id'], client_secret=settings.UNTAPPD['client_secret'], redirect_url=settings.UNTAPPD['redirect_url'])
+	auth_url = client.oauth.auth_url()
+
 	return HttpResponseRedirect(auth_url)
 
 def logout(request):
 	request.session.clear()
+
 	return HttpResponseRedirect('/')
 
 def callback(request):
+	client = untappd.Untappd(client_id=settings.UNTAPPD['client_id'], client_secret=settings.UNTAPPD['client_secret'], redirect_url=settings.UNTAPPD['redirect_url'])
 	code = request.GET.get('code')
 	access_token = client.oauth.get_token(code)
 

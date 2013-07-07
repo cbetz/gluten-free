@@ -4,19 +4,17 @@
 <div class="row boxes">
 	<ul class="thumbnails">
 		{% for beer in beer_list %}
-		    <li class="span4">
-		    	<div class="thumbnail right-caption span4">
-			    	<div class="span2">
-			    		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
-			    	</div>
-		    		<div class="caption">
-		    			<h5>{{ beer.name }}</h5>
-		    			<h6>{{ beer.brewery.name }}</h6>
+		    <li class="span4 clearfix">
+		    	<div class="thumbnail clearfix card">
+			    	<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" class="pull-left" style="margin-right:10px"/></a>
+		    		<div class="caption" class="pull-left">
+		    			<p><strong>{{ beer.name }}</strong></p>
+		    			<p>{{ beer.brewery.name }}</p>
 		    			<p>
 		    			{% if beer.gluten_removed %}
 		    				<i class="icon-eject"></i> Gluten Removed
 		    			{% else %}
-		    				&nbsp;
+		    				<i class="icon-ban-circle"></i> Gluten Free
 		    			{% endif %}
 		    			</p>
 		    		</div>
