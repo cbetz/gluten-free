@@ -27,7 +27,7 @@ def detail(request, beer_id):
 	return render(request, 'beers/detail.html', { 'beer': beer, 'untappd_beer': untappd_beer })
 
 def login(request):
-	client = untappd.Untappd(client_id=settings.UNTAPPD['client_id'], client_secret=settings.UNTAPPD['client_secret'], redirect_url=settings.UNTAPPD['redirect_url'])
+	client = untappd.Untappd(client_id=os.environ['UNTAPPD_CLIENT_ID'], client_secret=os.environ['UNTAPPD_CLIENT_SECRET'], redirect_url=os.environ['UNTAPPD_REDIRECT_URL'])
 	auth_url = client.oauth.auth_url()
 
 	return HttpResponseRedirect(auth_url)
@@ -38,7 +38,7 @@ def logout(request):
 	return HttpResponseRedirect('/')
 
 def callback(request):
-	client = untappd.Untappd(client_id=settings.UNTAPPD['client_id'], client_secret=settings.UNTAPPD['client_secret'], redirect_url=settings.UNTAPPD['redirect_url'])
+	client = untappd.Untappd(client_id=os.environ['UNTAPPD_CLIENT_ID'], client_secret=os.environ['UNTAPPD_CLIENT_SECRET'], redirect_url=os.environ['UNTAPPD_REDIRECT_URL'])
 	code = request.GET.get('code')
 	access_token = client.oauth.get_token(code)
 
