@@ -1,1 +1,1 @@
-web: python gfproject/manage.py runserver
+web: python gfproject/manage.py runserver "0.0.0.0:$PORT" 
