@@ -1,1 +1,1 @@
-web: gunicorn gfproject.wsgi
+web: python gfproject/manage.py runserver
