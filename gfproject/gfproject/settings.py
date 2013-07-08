@@ -1,6 +1,5 @@
 # Django settings for gfproject project.
 from django.conf import global_settings
-import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
