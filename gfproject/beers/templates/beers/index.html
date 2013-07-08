@@ -8,7 +8,7 @@
 		    	<div class="thumbnail clearfix card">
 			    	<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" class="pull-left" style="margin-right:10px"/></a>
 		    		<div class="caption" class="pull-left">
-		    			<p><strong>{{ beer.name }}</strong></p>
+		    			<p><strong><a href="/beers/{{ beer.id }}/">{{ beer.name }}</a></strong></p>
 		    			<p>{{ beer.brewery.name }}</p>
 		    			<p>
 		    			{% if beer.gluten_removed %}

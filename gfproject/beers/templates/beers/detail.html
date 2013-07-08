@@ -7,21 +7,68 @@
     		<a href="/beers/{{ beer.id }}/"><img src="{{ beer.label }}" /></a>
     	</div>
 		<div class="caption">
-			<h3>{{ beer.name }}</h3>
+			<h1>{{ beer.name }}</h1>
 			<h4>{{ beer.brewery.name }}</h4>
 			<p>
 			{% if beer.gluten_removed %}
 				<i class="icon-eject"></i> Gluten Removed
 			{% else %}
-				&nbsp;
+				<i class="icon-ban-circle"></i> Gluten Free
 			{% endif %}
 			</p>
 		</div>
 	</div>
 </div>
 <div class="row">
-	{{ untappd_beer.beer.stats.total_count}}
+	<div class="span12 card"> 
+		<div class="span2">
+			<h4 class="muted">Style</h4> 
+			<p>{{ untappd_beer.beer.beer_style }}</p>
+		</div>
+		<div class="span1">
+			<h4 class="muted">ABV</h4> 
+			<p>{{ untappd_beer.beer.beer_abv }}</p>
+		</div>
+		<div class="span1">
+			<h4 class="muted">IBU</h4> 
+			{% if untappd_beer.beer.beer_ibu = 0 %}
+				<p></p>
+			{% else %}
+				<p>{{ untappd_beer.beer.beer_ibu }}</p>
+			{% endif %}
+		</div>
+		<div class="span2">
+			<h4 class="muted">Checkins</h4> 
+			<p>{{ untappd_beer.beer.stats.total_count }}</p>
+		</div>
+		<div class="span2">
+			<h4 class="muted">Rating</h4> 
+			<p>{{ untappd_beer.beer.rating_score }}</p>
+		</div>
+		<div class="span2">
+			<h4 class="muted">My Rating</h4> 
+			<p>{{ untappd_beer.beer.auth_rating }}</p>
+		</div>
+	</div>
 </div>
-
+<div class="row">
+	<div class="span12 card"> 
+		<h4 class="muted">Description</h4> 
+		<p>{{ untappd_beer.beer.beer_description }}</p>
+	</div>
+</div>
+<div class="row">
+	<div class="span12 card"> 
+		<ul class="thumbnails clearfix">
+			{% for item in untappd_beer.beer.media.items %}
+				{% if forloop.counter <= 6 %}
+				<li class="span2">
+					<img class="thumbnail" src="{{ item.photo.photo_img_md }}" style="width: 160px; height: 160px;" />
+				</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+	</div>
+</div>
 
 {% endblock %}

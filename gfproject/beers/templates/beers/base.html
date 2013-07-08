@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GF Beers</title>
+    <title>No Gluten Beers</title>
     <meta name="description" content="">
     <meta name="author" content="Chris Betz">
     {% bootstrap_stylesheet_tag %}
@@ -30,9 +30,9 @@
 <div class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="/">GF Beers</a>
+            <a class="brand" href="/">No Gluten Beers</a>
             <ul class="nav">
-                <li><a href="{% url 'index' %}" class="">Home</a></li>
+                <li><a href="{% url 'index' %}" class="">Beers</a></li>
             </ul>
             <div class="pull-right">
                 {% if request.session.access_token %}
