@@ -137,15 +137,6 @@ class Untappd(object):
             print(url)
             return self._request(url)
 
-        def add_multi_request(self, path, params={}):
-            """Add multi request to list and return the number of requests added"""
-            url = '{path}?{params}'.format(
-                path=path,
-                params=urllib.urlencode(params)
-            )
-            self.multi_requests.append(url)
-            return len(self.multi_requests)
-
         def POST(self, path, params={}):
             """POST request that returns processed data"""
             params = self._enrich_params(params)
