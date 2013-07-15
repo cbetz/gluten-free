@@ -28,7 +28,7 @@ __author__ = u'Chris Betz'
 
 AUTH_ENDPOINT = 'https://untappd.com/oauth/authenticate'
 TOKEN_ENDPOINT = 'https://untappd.com/oauth/authorize/'
-API_ENDPOINT = 'http://api.untappd.com/v4'
+API_ENDPOINT = 'https://api.untappd.com/v4'
 
 # Number of times to retry http requests
 NUM_REQUEST_RETRIES = 3
