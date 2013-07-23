@@ -1,0 +1,23 @@
+{% extends "beers/base.html" %}
+
+{% block content %}
+
+<div class="row" id="gluten-free">
+	<div class="span12 card"> 
+		<h3>Gluten Free vs. Gluten Removed</h3>
+	</div>
+</div>
+<div class="row" id="gluten-free">
+	<div class="span12 card"> 
+		<i class="icon-ban-circle"></i><strong> Gluten Free</strong>
+		<p>Beers labeled gluten-free are brewed with 100% gluten-free ingredients. Instead of malted barley, these beers use sorghum, gluten-free oats, brown rice, chestnuts, or buckwheat. Considered safe for individuals with Celiac Disease. 
+	</div>
+</div>
+<div class="row" id="gluten-removed">
+	<div class="span12 card"> 
+		<i class="icon-eject"></i><strong> Gluten Removed</strong>
+		<p>Beers labeled "processed or treated or crafted to remove gluten" are brewed with traditional ingredients, including malted barley. These beers have less than 20ppm (parts per million) gluten. These beers may not be safe for people with Celiac Disease. For more information see <a href="http://www.ttb.gov/rulings/2012-2.pdf">TTB Ruling Number 2012-2</a>.
+	</div>
+</div>
+
+{% endblock %}

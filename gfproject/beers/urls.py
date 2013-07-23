@@ -1,4 +1,5 @@
 from django.conf.urls import patterns, url
+from django.views.generic import TemplateView
 
 from beers import views
 
@@ -8,7 +9,5 @@ urlpatterns = patterns('',
     url(r'^logout', views.logout),
     url(r'^callback$', view=views.callback, name='callback'),
     url(r'^(?P<beer_id>\d+)/$', views.detail, name='detail'),
-    #url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
-    #url(r'^(?P<pk>\d+)/results/$', views.ResultsView.as_view(), name='results'),
-    #url(r'^(?P<poll_id>\d+)/vote/$', views.vote, name='vote'),
+    url(r'^info', TemplateView.as_view(template_name='beers/info.html'), name='info'),
 )

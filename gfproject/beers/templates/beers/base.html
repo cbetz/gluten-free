@@ -33,6 +33,7 @@
             <a class="brand" href="/">No Gluten Beers</a>
             <ul class="nav">
                 <li><a href="{% url 'index' %}" class="">Beers</a></li>
+                <li><a href="{% url 'info' %}" class="">Info</a></li>
             </ul>
             <div class="pull-right">
                 {% if request.session.access_token %}
